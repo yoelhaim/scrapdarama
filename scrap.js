@@ -144,16 +144,14 @@ app.post("/", urlencodedParser, (req, res) => {
           const checkepp = await epl.findAll({
             where: { id_detail_ep: titlequerys },
           });
-          if (checkepp.length > 0) {
-            console.log(`waaaaaaaa3 ${checkepp.length}`);
-          } else {
-            const add = await epl.create({
-              name_ep: titleep,
-              id_detail_ep: titlequery,
-              ep_serie: epp,
-              stt: 0,
-            });
-          }
+
+          const add = await epl.create({
+            name_ep: titleep,
+            id_detail_ep: titlequery,
+            ep_serie: epp,
+            stt: 0,
+          });
+
           ////// sql insert
 
           let resp = await axios.get(ep_link);
@@ -163,7 +161,7 @@ app.post("/", urlencodedParser, (req, res) => {
           let titleinserver = document.querySelector(
             ".single-episode >h1"
           ).textContent;
-          console.log(titleinserver + "<<<>>><<<>>>.............");
+          console.log(titleinserver + " <<< ---- ");
           // get ep info
           for (server of servers) {
             let server_link = server.getAttribute("data-server");
@@ -173,16 +171,14 @@ app.post("/", urlencodedParser, (req, res) => {
             const checkserv = await serverl.findAll({
               where: { detail_server_serie: titlequerys },
             });
-            if (checkserv.length > 0) {
-              console.log(`waaaaaaaa3 ${checkserv.length}`);
-            } else {
-              const add = await serverl.create({
-                server_serie: server_link,
-                name_server_serie: titleinserver,
-                detail_server_serie: titlequery,
-                ep_server: epp,
-              });
-            }
+
+            const add = await serverl.create({
+              server_serie: server_link,
+              name_server_serie: titleinserver,
+              detail_server_serie: titlequery,
+              ep_server: epp,
+            });
+
             ////// sql insert
           }
           // break;
