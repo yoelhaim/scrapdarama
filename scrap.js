@@ -149,7 +149,7 @@ app.post("/", urlencodedParser, (req, res) => {
             name_ep: titleep,
             id_detail_ep: titlequery,
             ep_serie: epp,
-            stt: 0,
+            stt: 1,
           });
 
           ////// sql insert
