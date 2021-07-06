@@ -117,10 +117,10 @@ app.post("/", urlencodedParser, (req, res) => {
             views_serie: 0,
             views: 0,
             date_serie: "w777",
-            namedrama__serie: "null",
+            namedrama__serie: mm,
             id_serie_detail: titlequeryst,
             autrename: aute,
-            allep: titlequerys,
+            allep: allep,
           });
         }
         ////// sql inser
